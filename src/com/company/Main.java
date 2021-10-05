@@ -17,7 +17,7 @@
  * Description:
  *
  * Changelog:
- *
+ * 
  *
  * TODO: found out the requirements so you can hard code the magic square
  *****************************************************************************************************************/
@@ -32,14 +32,21 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         
-        String token = "EAAR621eun4IBALJqUrPXbEICcyckxKwN809dJpN5YlP1cN2lNxedDYbYNANpOW9c4IkEVcwB45cSNJbPTREGLQRZAm6FlgE1FykZCVIz6zdWyaqIrlZANoN9Op59M6OxdCjqEuXnrPW02D2Xi7YWjrye8k97GbSV5YnWaC7bZAXTQuSBs88zbZCoAicGSKRONZBEkJ9gsaZCwnv7JvZCXaaWjJQghBgB5YMZD";
+        FileWriter file = new FileWriter("graphGrab.txt");
 
-        URL url = new URL("https://graph.facebook.com/v12.0/1095482641223244?fields=feed&access_token=" + token);
+        String token = "EAAR621eun4IBADZBZAzi10kktbgSHDEE4zkJS57wkdYxALZBNuQSLMdYXfiXNLPklbhg0nFP2H88unw8ZCXBq1lYhZBXLygb8nZCwnJOfZAfarTZCnJcBbZC5GtvbXtfM1EaDdEILVZAVbyh8scyz3R2cSWFdZBnyUvoeQbkfuXqUezLnaMFVzfuDQZC1rAK2mKtXi4P3g6ve5ubNmsULUqGgCxZAq283f5DHy7QZD",
+               groupID = "1095482641223244";
 
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), StandardCharsets.UTF_8))) {
+        URL url = new URL("https://graph.facebook.com/v12.0/" + groupID + "?fields=feed&access_token=" + token);
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))) {
             for (String line; (line = reader.readLine()) != null;) {
-                System.out.println(line + "\n");
+                System.out.println(line);
+                System.out.println();
+                file.write(line);
             }
         }
+        
+        file.close();
     }
 }

@@ -1,12 +1,14 @@
 import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import Home from './components/home.js';
 import { makeStyles } from '@mui/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/material/Container';
+import Card from '@mui/material/Card';
+import Home from './components/home.js';
 
 const theme = createTheme({
     palette: {
-        type: 'dark',
+        mode: 'light',
         primary: {
             main: '#C62828',
             light: '#D32F2F',
@@ -17,14 +19,15 @@ const theme = createTheme({
             light: '#1976D2',
             dark: '#0D47A1',
         },
+        background: {
+            default: '#FFEBEE',
+        }
     },
 });
 
 const useStyles = makeStyles({
     root: {
-        backgroundColor: '#333',
-        minHeight: '100%',
-        height: '100%',
+        paddingTop: '2rem',
     },
 });
 
@@ -34,7 +37,11 @@ function App() {
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <div className={classes.root}>
-                <Home />
+                <Container>
+                    <Card elevation={5}>
+                        <Home />
+                    </Card>
+                </Container>
             </div>
         </ThemeProvider>
     );

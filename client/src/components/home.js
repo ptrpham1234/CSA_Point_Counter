@@ -4,10 +4,10 @@ import Typography from '@mui/material/Typography';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        paddingTop: '1rem',
+        padding: '1rem 0',
     },
     title: {
-        color: theme.palette.grey[100],
+        color: theme.palette.grey[800],
         textAlign: 'center',
     }
 }));
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 function Home() {
     const classes = useStyles();
     return <div className={classes.root}>
-        <Typography className={classes.title} variant="h1">CSA Points Leaderboard</Typography>
+        <Typography className={classes.title} variant="h3" component="h1">CSA Points Leaderboard</Typography>
         
     </div>;
 }

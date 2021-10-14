@@ -5,3 +5,9 @@
 **09/29/2021** - found out how to grab post captions and comments but only on posts i own. Found out we need approval from Facebook to access other people's
 
 **09/30/2021** - started the Facebook app approval process. Added terms and conditions and Privacy policy
+
+**10/05/2021** - grabbed data from Facebook API. Problem with escape sequences. Found out scanner cant read escape sequences.
+
+**10/04/2021** - skipped over the escape sequence problem and just split the data using symbols and delimeter. Problem with splitting "\n". Solved it
+
+
